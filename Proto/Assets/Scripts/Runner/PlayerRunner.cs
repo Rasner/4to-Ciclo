@@ -64,7 +64,7 @@ public class PlayerRunner : MonoBehaviour {
 	{
 		if(grounded == true)
 		{
-			rb.velocity = new Vector3(rb.velocity.x, 7.7f, rb.velocity.z);
+			rb.velocity = new Vector3(rb.velocity.x, 10f, rb.velocity.z);
 			grounded = false; 
 		}
 	}

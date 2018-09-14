@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Platform
   - Coin
+  - Health
   layers:
   - Default
   - TransparentFX

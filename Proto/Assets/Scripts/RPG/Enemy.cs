@@ -51,7 +51,7 @@ public class Enemy : MonoBehaviour {
     
     void OnDamageTaken()
     {
-        StartCoroutine(color());
+        StartCoroutine("color");
     }
 
     IEnumerator color()

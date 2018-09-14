@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33784368686666408}
   - component: {fileID: 23945689929055628}
   - component: {fileID: 65694179242787628}
-  - component: {fileID: 114673132630032130}
+  - component: {fileID: 114311010656111640}
   - component: {fileID: 54388802453283806}
   m_Layer: 0
   m_Name: Hazard
@@ -113,7 +113,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114673132630032130
+--- !u!114 &114311010656111640
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,7 +121,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1211256099036784}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98ce06ab99dc83b4c822f1471b0289f3, type: 3}
+  m_Script: {fileID: 11500000, guid: a7b185b6a2eda90488512d5c42d7a30a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 0

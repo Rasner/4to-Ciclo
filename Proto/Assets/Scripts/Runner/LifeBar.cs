@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LifeBar : MonoBehaviour {
@@ -16,6 +17,7 @@ public class LifeBar : MonoBehaviour {
 
 		instance = this;
 		
+		healthBar = GameObject.Find("Health").GetComponent<Slider>();
 	}
 
 	// Use this for initialization
@@ -25,6 +27,8 @@ public class LifeBar : MonoBehaviour {
 		CurrentHealth = MaxHealth;
 
 		healthBar.value = CalculateHealth();
+
+		
 		
 	}
 	
@@ -56,6 +60,7 @@ public class LifeBar : MonoBehaviour {
 	void Die()
 	{
 		CurrentHealth = 0;
+		SceneManager.LoadScene(0);
         Destroy(this.gameObject);
 	}
 }

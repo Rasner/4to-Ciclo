@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 
     public static Player instance;
     public const int VidaFull = 100;
-    public int VidaAc;
+    public float VidaAc;
     public Material ondmg;
     public Material standar;
     public Material onshield;
@@ -74,7 +74,9 @@ public class Player : MonoBehaviour
     IEnumerator Damage()
     {
         gameObject.GetComponent<Renderer>().material = ondmg;
-        VidaAc -= UnityEngine.Random.Range(5, 12);
+        //VidaAc -= UnityEngine.Random.Range(5, 12);
+        LifeBar.instance.DealDamage(UnityEngine.Random.Range(5, 12));
+        VidaAc = LifeBar.instance.CurrentHealth;
         Debug.Log("Player dañado");
         Debug.Log(VidaAc);
         yield return new WaitForSeconds(0.5f);
