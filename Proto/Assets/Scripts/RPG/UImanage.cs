@@ -16,6 +16,7 @@ public class UImanage : MonoBehaviour {
     public bool S_button;
     // Use this for initialization
     void Start() {
+       
         instance = this;
         PTurn.value = 0;
         Pcombat = false;
@@ -41,6 +42,19 @@ public class UImanage : MonoBehaviour {
             A_button = 0;
             Pcombat = false;
         }
+
+        if (A_button == 2 && Pcombat == true)
+        {
+            GameObject magia = GameObject.Find("Text");
+            Counter Libros = magia.GetComponent<Counter>();
+            yield return new WaitForSeconds(0.1f);
+            Libros.Score -= 1;
+        }
+        
+       
+            
+        
+
     }
 
     IEnumerator OnEnemyTurnEnd()
@@ -57,6 +71,12 @@ public class UImanage : MonoBehaviour {
 
     public void Turn()
     {
+        if(A_button == 2 && Pcombat == true)
+        {
+            GameObject magia = GameObject.Find("Text");
+            Counter Libros = magia.GetComponent<Counter>();
+            Libros.Score -= 10;
+        }
         if (PTurn.value < 1)
         {
             PTurn.value += 0.0060f;

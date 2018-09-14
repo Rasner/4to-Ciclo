@@ -27,6 +27,9 @@ public class Counter : MonoBehaviour {
 	void Update () {
 
 		Coins.text = "x " + Score.ToString();
-		
+        if (Score < 0)
+        {
+            Score = 0;
+        }
 	}
 }
