@@ -1,18 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UImanage : MonoBehaviour {
 
     public static UImanage instance;
+    public Slider PTurn;
+    public Slider ETurn;
     public int A_button;
-    public bool combat;
-    public bool casting;
+    public bool Pcombat;
+    public bool Ecombat;
+    public bool Pcasting;
+    public bool Ecasting;
     public bool S_button;
     // Use this for initialization
     void Start() {
         instance = this;
-        combat = false;
+        PTurn.value = 0;
+        Pcombat = false;
+        Ecombat = false;
         S_button = false;
         A_button = 0;
 	}
@@ -20,31 +27,63 @@ public class UImanage : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            Debug.Log("pressT");
-            StartCoroutine(OnTurnEnd());
-        }
+        Turn();
+        //EnemyTurn();
 	}
 
-    public void EndTurn()
+    IEnumerator OnPlayerTurnEnd()
     {
-        StartCoroutine(OnTurnEnd());
-    }
-
-    IEnumerator OnTurnEnd()
-    {
-        casting = true;
-        Debug.Log("casting start");
-        yield return new WaitForSeconds(1);
-        casting = false;
-        if (casting == false && combat == false)
+        if (Pcasting == false && Pcombat == false)
         {
-            combat = true;
+            Pcombat = true;
             yield return new WaitForSeconds(0.1f);
             Debug.Log("combatefalso");
             A_button = 0;
-            combat = false;
+            Pcombat = false;
         }
+    }
+
+    IEnumerator OnEnemyTurnEnd()
+    {
+        if (Ecasting == false && Ecombat == false)
+        {
+            Ecombat = true;
+            yield return new WaitForSeconds(0.1f);
+            Debug.Log("combatefalso");
+            A_button = 0;
+            Ecombat = false;
+        }
+    }
+
+    public void Turn()
+    {
+        if (PTurn.value < 1)
+        {
+            PTurn.value += 0.0060f;
+            Pcasting = (PTurn.value < 1 && PTurn.value > 0.8) ? true : false;
+        }
+
+        else if (PTurn.value == 1)
+        {
+            PTurn.value = 0;
+            StartCoroutine(OnPlayerTurnEnd());
+        }
+
+        if (ETurn.value < 1)
+        {
+            ETurn.value += 0.0055f;
+            Ecasting = (ETurn.value < 1 && ETurn.value > 0.8) ? true : false;
+        }
+
+        else if (ETurn.value == 1)
+        {
+            ETurn.value = 0;
+            StartCoroutine(OnEnemyTurnEnd());
+        }
+    }
+
+    public void EnemyTurn()
+    {
+        
     }
 }

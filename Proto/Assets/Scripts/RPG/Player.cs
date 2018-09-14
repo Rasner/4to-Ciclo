@@ -36,13 +36,13 @@ public class Player : MonoBehaviour
             UImanage.instance.S_button = false;
         }
 
-        if (UImanage.instance.combat == true && shielding == false && dañado == false)
+        if (UImanage.instance.Ecombat == true && shielding == false && dañado == false)
         {
             dañado = true;
             OnDamageTaken();
         }
 
-        else if (UImanage.instance.casting == true && shielding == true)
+        else if (UImanage.instance.Pcasting == true && shielding == true)
         {
             Debug.Log("bloqueado");
         }

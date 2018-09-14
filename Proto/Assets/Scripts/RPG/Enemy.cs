@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Enemy : MonoBehaviour {
 
     public const int VidaFull = 100;
@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (UImanage.instance.combat == true && dañado == false)
+        if (UImanage.instance.Ecombat == true && dañado == false)
         {
             dañado = true;
             switch (UImanage.instance.A_button)
@@ -43,7 +43,9 @@ public class Enemy : MonoBehaviour {
         }
         if (VidaAc <= 0)
         {
-            Destroy(this.gameObject);
+           
+            SceneManager.LoadScene(0);
+
         }
     }
     

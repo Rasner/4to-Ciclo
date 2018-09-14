@@ -118,8 +118,7 @@ public class PlayerRunner : MonoBehaviour {
 		{
 			SpeedManager.instance.Stop();
 			Transition.instance.Play();
-            DontDestroyOnLoad(this.gameObject);
-        }	
+		}	
 
 		if(other.gameObject.tag == "Coin")
 		{
