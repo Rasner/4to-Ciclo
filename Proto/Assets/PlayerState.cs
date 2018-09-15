@@ -8,7 +8,7 @@ public class PlayerState : MonoBehaviour {
     public float Score;
     void Start()
     {
-        HP = GlobalControl.Instance.CurrentHealth = HP;
+       HP = GlobalControl.Instance.CurrentHealth = HP;
        Score = GlobalControl.Instance.Score = Score;
     }
     public void SavePlayer()
