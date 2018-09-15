@@ -17,7 +17,10 @@ public class LifeBar : MonoBehaviour {
 
 		instance = this;
 		
-		healthBar = GameObject.Find("Health").GetComponent<Slider>();
+		if(GameObject.Find("Health") != null)
+		{
+			healthBar = GameObject.Find("Health").GetComponent<Slider>();
+		}
 	}
 
 	// Use this for initialization
@@ -26,7 +29,10 @@ public class LifeBar : MonoBehaviour {
 		MaxHealth = 100f;
 		CurrentHealth = MaxHealth;
 
-		healthBar.value = CalculateHealth();
+		if(healthBar != null)
+		{
+			healthBar.value = CalculateHealth();
+		}
 
 		
 		
@@ -44,7 +50,11 @@ public class LifeBar : MonoBehaviour {
 	public void DealDamage(float damageValue)
 	{
 		CurrentHealth -= damageValue;
-		healthBar.value = CalculateHealth();
+
+		if(healthBar != null)
+		{
+			healthBar.value = CalculateHealth();
+		}
 
 		if(CurrentHealth <= 0)
 		{

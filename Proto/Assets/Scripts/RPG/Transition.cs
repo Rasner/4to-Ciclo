@@ -1,25 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Transition : MonoBehaviour {
-
-	Animator anim;
-
+public class Transition : MonoBehaviour 
+{
+	private Animator anim;
+	
 	public static Transition instance;
 
-	void Awake() {
+	private AsyncOperation loadingOP;
 
+	void OnEnable()
+	{
 		instance = this;
-		
 	}
 
 	// Use this for initialization
-	void Start () {
-
+	void Start () 
+	{
+		loadingOP = null;
 		anim = GetComponent<Animator>();
-		
+
 	}
 	
 	// Update is called once per frame
@@ -30,12 +33,19 @@ public class Transition : MonoBehaviour {
 	}
 	public void Play()
 	{
-		anim.Play("Transition");
+		Color c = GetComponent<Image>().color;
+		c.a = 1;
+		GetComponent<Image>().color = c;
+		anim.SetTrigger("transition");
+		loadingOP = SceneManager.LoadSceneAsync(1);
+		loadingOP.allowSceneActivation = false;
 	}
 
 	public void EndAnim()
 	{
-		SceneManager.LoadScene(1);
-        Destroy(this.gameObject);
+		Color c = GetComponent<Image>().color;
+		c.a = 0;
+		GetComponent<Image>().color = c;
+		loadingOP.allowSceneActivation = true;
 	}
 }

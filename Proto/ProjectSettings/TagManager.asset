@@ -10,6 +10,7 @@ TagManager:
   - Platform
   - Coin
   - Health
+  - Transition
   layers:
   - Default
   - TransparentFX

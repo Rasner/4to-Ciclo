@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class Swipe : MonoBehaviour {
 
 	Vector3 firstPressPos;
 	Vector3 secondPressPos;
 	Vector3 currentSwipe;
 
+
+
 	// Use this for initialization
 	void Start () {
-		
+
 	}
 	
 	// Update is called once per frame

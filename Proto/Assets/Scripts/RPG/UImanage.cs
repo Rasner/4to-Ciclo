@@ -57,12 +57,11 @@ public class UImanage : MonoBehaviour {
 
     }
 
-    IEnumerator OnEnemyTurnEnd()
+    void OnEnemyTurnEnd()
     {
         if (Ecasting == false && Ecombat == false)
         {
             Ecombat = true;
-            yield return new WaitForSeconds(0.1f);
             Debug.Log("combatefalso");
             A_button = 0;
             Ecombat = false;
@@ -94,11 +93,10 @@ public class UImanage : MonoBehaviour {
             ETurn.value += 0.0055f;
             Ecasting = (ETurn.value < 1 && ETurn.value > 0.8) ? true : false;
         }
-
         else if (ETurn.value == 1)
         {
+            OnEnemyTurnEnd();
             ETurn.value = 0;
-            StartCoroutine(OnEnemyTurnEnd());
         }
     }
 

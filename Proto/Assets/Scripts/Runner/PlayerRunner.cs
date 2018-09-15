@@ -122,7 +122,7 @@ public class PlayerRunner : MonoBehaviour {
 
 		if(other.gameObject.tag == "Coin")
 		{
-			Counter.instance.Score += 1;
+			GameObject.Find("Counter Text").GetComponent<Counter>().Score += 1;
 			Destroy(other.gameObject);
 		}
 	}

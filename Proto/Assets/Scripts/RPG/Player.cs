@@ -41,7 +41,6 @@ public class Player : MonoBehaviour
             dañado = true;
             OnDamageTaken();
         }
-
         else if (UImanage.instance.Pcasting == true && shielding == true)
         {
             Debug.Log("bloqueado");
