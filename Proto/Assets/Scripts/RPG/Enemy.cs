@@ -20,22 +20,8 @@ public class Enemy : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (UImanage.instance.Ecombat == true && dañado == false)
+        if (UImanage.instance.Pcombat == true && dañado == false)
         {
-            dañado = true;
-            switch (UImanage.instance.A_button)
-            {
-                case 1:
-                    VidaAc -= 10;
-                    break;
-                case 2:
-                    VidaAc -= 20;
-                    break;
-                case 3:
-                    VidaAc -= 30;
-                    break;
-                default: break;
-            }
             if (UImanage.instance.A_button != 0)
             {
                 OnDamageTaken();
@@ -57,6 +43,20 @@ public class Enemy : MonoBehaviour {
     IEnumerator color()
     {
         gameObject.GetComponent<Renderer>().material = ondmg;
+        switch (UImanage.instance.A_button)
+        {
+            case 1:
+                VidaAc -= 10;
+                break;
+            case 2:
+                VidaAc -= 20;
+                break;
+            case 3:
+                VidaAc -= 30;
+                break;
+            default: break;
+        }
+        dañado = true;
         yield return new WaitForSeconds(0.5f);
         dañado = false;
         gameObject.GetComponent<Renderer>().material = standar;
