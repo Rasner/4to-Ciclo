@@ -64,7 +64,7 @@ public class PlayerRunner : MonoBehaviour {
 	{
 		if(grounded == true)
 		{
-			rb.velocity = new Vector3(rb.velocity.x, 10f, rb.velocity.z);
+			rb.velocity = new Vector3(rb.velocity.x, 11f, rb.velocity.z);
 			grounded = false; 
 		}
 	}
@@ -75,7 +75,7 @@ public class PlayerRunner : MonoBehaviour {
 		{
 			StopCoroutine("Slide");
 			StartCoroutine("Slide");
-			t.transform.rotation = Quaternion.Euler(0,0,90);
+			t.transform.rotation = Quaternion.Euler(-180,90,0);
 			t.transform.position = new Vector3(t.transform.position.x,(t.transform.position.y)-0.35f,0);
 			sliding = true;
 		}
@@ -94,7 +94,7 @@ public class PlayerRunner : MonoBehaviour {
 
 		yield return new WaitForSeconds(0.6f);
 
-		t.transform.rotation = Quaternion.Euler(0,0,0);
+		t.transform.rotation = Quaternion.Euler(-90,90,0);
 		t.transform.position = new Vector3(t.transform.position.x,(t.transform.position.y)+0.35f,0);
 		sliding = false;
 	}

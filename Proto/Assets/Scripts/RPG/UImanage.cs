@@ -72,7 +72,7 @@ public class UImanage : MonoBehaviour {
     {
         if(A_button == 2 && Pcombat == true)
         {
-            GameObject magia = GameObject.Find("Text");
+            GameObject magia = GameObject.Find("Counter Text");
             Counter Libros = magia.GetComponent<Counter>();
             Libros.Score -= 10;
         }
