@@ -27,5 +27,10 @@ public class GlobalControl : MonoBehaviour
     {
         Score = Counter.instance.Score;
         CurrentHealth = LifeBar.instance.CurrentHealth;
+        if (CurrentHealth <= 0)
+        {
+            CurrentHealth = 100;
+            Score = 0;
+        }
     }
 }
