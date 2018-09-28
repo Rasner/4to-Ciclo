@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (UImanage.instance.ETurn.value == 1)
+        if (UImanage.instance.PTurn.value == 1)
         {
             if (UImanage.instance.A_button != 0)
             {

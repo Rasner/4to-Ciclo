@@ -996,7 +996,6 @@ MonoBehaviour:
   standar: {fileID: 2100000, guid: ffd56a94bb9c28642825550f07d4a223, type: 2}
   onshield: {fileID: 2100000, guid: b128719734e926641aa9a6b83d885ac4, type: 2}
   shielding: 0
-  "da\xF1ado": 0
 --- !u!114 &584663316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1347,18 +1346,7 @@ MonoBehaviour:
   m_Value: 0.8
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &795676586
@@ -2496,7 +2484,6 @@ MonoBehaviour:
   standar: {fileID: 2100000, guid: ffd56a94bb9c28642825550f07d4a223, type: 2}
   onshield: {fileID: 2100000, guid: b128719734e926641aa9a6b83d885ac4, type: 2}
   shielding: 0
-  "da\xF1ado": 0
 --- !u!1001 &1954771616
 Prefab:
   m_ObjectHideFlags: 0
