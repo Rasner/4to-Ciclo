@@ -58,7 +58,7 @@ public class LifeBar : MonoBehaviour {
 
 		if(CurrentHealth <= 0)
 		{
-			Die();
+            Die();
 		}
 	}
 
@@ -69,8 +69,9 @@ public class LifeBar : MonoBehaviour {
 
 	void Die()
 	{
-		CurrentHealth = 0;
-		SceneManager.LoadScene(0);
+        //CurrentHealth = 0;
+        SceneManager.LoadScene(0);
+        
         Destroy(this.gameObject);
 	}
 }

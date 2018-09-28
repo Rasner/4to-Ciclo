@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     {
         instance = this;
         shielding = false;
+        dañado = false;
     }
 
     // Update is called once per frame
@@ -27,7 +28,7 @@ public class Player : MonoBehaviour
             OnShieldActive();
             UImanage.instance.S_button = false;
         }
-        if (UImanage.instance.Ecombat == true && shielding == false && dañado == false)
+        if (UImanage.instance.Ecasting == true && shielding == false && dañado == false)
         {
             dañado = true;
             OnDamageTaken();

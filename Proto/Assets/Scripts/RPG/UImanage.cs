@@ -19,6 +19,7 @@ public class UImanage : MonoBehaviour {
        
         instance = this;
         PTurn.value = 0;
+        ETurn.value = 0;
         Pcombat = false;
         Ecombat = false;
         S_button = false;
@@ -34,22 +35,22 @@ public class UImanage : MonoBehaviour {
 
     void OnPlayerTurnEnd()
     {
-        if (Pcasting == false && Pcombat == false)
+        if (Pcasting == false)
         {
             Pcombat = true;
             Debug.Log("combatefalso");
-            A_button = 0;
+            //A_button = 0;
             Pcombat = false;
         }
     }
 
     void OnEnemyTurnEnd()
     {
-        if (Ecasting == false && Ecombat == false)
+        if (Ecasting == false)
         {
             Ecombat = true;
             Debug.Log("combatefalso");
-            A_button = 0;
+            //A_button = 0;
             Ecombat = false;
         }
     }
