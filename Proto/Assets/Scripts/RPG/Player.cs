@@ -10,13 +10,11 @@ public class Player : MonoBehaviour
     public Material standar;
     public Material onshield;
     public bool shielding;
-    public bool dañado;
     // Use this for initialization
     void Start()
     {
         instance = this;
         shielding = false;
-        dañado = false;
     }
 
     // Update is called once per frame
@@ -28,9 +26,9 @@ public class Player : MonoBehaviour
             OnShieldActive();
             UImanage.instance.S_button = false;
         }
-        if (UImanage.instance.Ecasting == true && shielding == false && dañado == false)
+        if (UImanage.instance.ETurn.value == 1)
         {
-            dañado = true;
+            GlobalControl.Instance.CurrentHealth -= 10;
             OnDamageTaken();
         }
         else if (UImanage.instance.Ecasting == true && shielding == true)
@@ -62,7 +60,6 @@ public class Player : MonoBehaviour
         gameObject.GetComponent<Renderer>().material = ondmg;
         Debug.Log("Player dañado");
         yield return new WaitForSeconds(0.5f);
-        dañado = false;
         gameObject.GetComponent<Renderer>().material = standar;
     }
 
