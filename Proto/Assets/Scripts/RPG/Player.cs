@@ -27,7 +27,6 @@ public class Player : MonoBehaviour
             OnShieldActive();
             UImanage.instance.S_button = false;
         }
-
         if (UImanage.instance.Ecombat == true && shielding == false && dañado == false)
         {
             dañado = true;
@@ -35,7 +34,7 @@ public class Player : MonoBehaviour
         }
         else if (UImanage.instance.Ecasting == true && shielding == true)
         {
-            Debug.Log("bloqueado");
+            //Debug.Log("bloqueado");
         }
     }
 
