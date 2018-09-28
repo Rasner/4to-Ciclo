@@ -6,8 +6,6 @@ public class Player : MonoBehaviour
 {
 
     public static Player instance;
-    public const int VidaFull = 100;
-    public float VidaAc;
     public Material ondmg;
     public Material standar;
     public Material onshield;
@@ -17,19 +15,13 @@ public class Player : MonoBehaviour
     void Start()
     {
         instance = this;
-        VidaAc = VidaFull;
         shielding = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*if (Input.GetKeyDown("space"))
-        {
-            OnDamageTaken();
-        }
-        */
-        if (UImanage.instance.S_button && !shielding)
+        if (UImanage.instance.S_button == true && shielding == false)
         {
             shielding = true;
             OnShieldActive();
@@ -41,14 +33,9 @@ public class Player : MonoBehaviour
             dañado = true;
             OnDamageTaken();
         }
-        else if (UImanage.instance.Pcasting == true && shielding == true)
+        else if (UImanage.instance.Ecasting == true && shielding == true)
         {
             Debug.Log("bloqueado");
-        }
-
-        if (VidaAc <= 0)
-        {
-            Destroy(this.gameObject);
         }
     }
 
@@ -73,11 +60,7 @@ public class Player : MonoBehaviour
     IEnumerator Damage()
     {
         gameObject.GetComponent<Renderer>().material = ondmg;
-        //VidaAc -= UnityEngine.Random.Range(5, 12);
-        LifeBar.instance.DealDamage(UnityEngine.Random.Range(5, 12));
-        VidaAc = LifeBar.instance.CurrentHealth;
         Debug.Log("Player dañado");
-        Debug.Log(VidaAc);
         yield return new WaitForSeconds(0.5f);
         dañado = false;
         gameObject.GetComponent<Renderer>().material = standar;
