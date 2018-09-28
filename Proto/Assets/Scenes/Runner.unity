@@ -130,7 +130,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 41f556003274e364696db3b09cd5076e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.97
+      value: 1.45
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 41f556003274e364696db3b09cd5076e, type: 3}
       propertyPath: m_LocalRotation.x
@@ -874,13 +874,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: 0.042559553, y: 0.5350328, z: -0.054243922, w: 0.84201324}
-  m_LocalPosition: {x: -7.21, y: 4.35, z: -3.98}
+  m_LocalRotation: {x: 0.012196094, y: 0.5366397, z: -0.034932684, w: 0.8429998}
+  m_LocalPosition: {x: -7.33, y: 3.45, z: -3.99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 7.4530005, y: 64.693, z: -2.6480002}
+  m_LocalEulerAnglesHint: {x: 3.328, y: 64.884, z: -2.63}
 --- !u!1001 &536811173
 Prefab:
   m_ObjectHideFlags: 0
@@ -898,7 +898,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 41f556003274e364696db3b09cd5076e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.97
+      value: 1.45
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 41f556003274e364696db3b09cd5076e, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1407,8 +1407,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.17125002, y: 0.754}
   m_AnchorMax: {x: 0.37, y: 0.82500005}
-  m_AnchoredPosition: {x: -0.25, y: -0.2199707}
-  m_SizeDelta: {x: 0.9900055, y: -2}
+  m_AnchoredPosition: {x: -0.25, y: 0.030532837}
+  m_SizeDelta: {x: 0.99, y: 13.337}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1221171291
 MonoBehaviour:
@@ -1435,7 +1435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1444,7 +1444,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
+    m_FontSize: 27
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 0
@@ -1568,7 +1568,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1325618430}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d13f47800c5a7f248893d867a9582f65, type: 3}
   m_Name: 
@@ -1643,7 +1643,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 960435975}
   m_HandleRect: {fileID: 0}
@@ -2251,10 +2251,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1922414269}
+  - component: {fileID: 1922414270}
   m_Layer: 0
-  m_Name: AfterBattle
+  m_Name: GameController
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2265,12 +2266,23 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1922414268}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12, y: 0, z: 0}
+  m_LocalPosition: {x: -2.96, y: 4.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1922414270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1922414268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d13f47800c5a7f248893d867a9582f65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2016471244
 Prefab:
   m_ObjectHideFlags: 0
