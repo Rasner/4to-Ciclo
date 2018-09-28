@@ -27,7 +27,7 @@ public class LifeBar : MonoBehaviour {
 	void Start () {
 
 		MaxHealth = 100f;
-		CurrentHealth = MaxHealth;
+        CurrentHealth = GlobalControl.Instance.CurrentHealth;
 
 		if(healthBar != null)
 		{

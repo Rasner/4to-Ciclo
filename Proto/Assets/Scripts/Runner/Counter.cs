@@ -19,7 +19,7 @@ public class Counter : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		Score = 0;
+        Score = GlobalControl.Instance.Score;
 		
 	}
 	

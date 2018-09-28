@@ -6,9 +6,8 @@ public class GlobalControl : MonoBehaviour
 {
     public static GlobalControl Instance;
 
-
     public float CurrentHealth;
-    public float Score;
+    public int Score;
     void Awake()
     {
         if (Instance == null)
@@ -20,5 +19,13 @@ public class GlobalControl : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        Score = 0;
+        CurrentHealth = 100;
+    }
+
+    private void Update()
+    {
+        Score = Counter.instance.Score;
+        CurrentHealth = LifeBar.instance.CurrentHealth;
     }
 }
