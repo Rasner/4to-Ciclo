@@ -28,7 +28,11 @@ public class Player : MonoBehaviour
         }
         if (UImanage.instance.ETurn.value == 1)
         {
+<<<<<<< HEAD
             LifeBar.instance.DealDamage(10);
+=======
+            GlobalControl.Instance.CurrentHealth -= 10;
+>>>>>>> b11fd0ba58765fe3b5f08b5f7823bf6853539196
             OnDamageTaken();
         }
         else if (UImanage.instance.Ecasting == true && shielding == true)
@@ -59,7 +63,10 @@ public class Player : MonoBehaviour
     {
         gameObject.GetComponent<Renderer>().material = ondmg;
         Debug.Log("Player dañado");
+<<<<<<< HEAD
         
+=======
+>>>>>>> b11fd0ba58765fe3b5f08b5f7823bf6853539196
         yield return new WaitForSeconds(0.5f);
         gameObject.GetComponent<Renderer>().material = standar;
     }
