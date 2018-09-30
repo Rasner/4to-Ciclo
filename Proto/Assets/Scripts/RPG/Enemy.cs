@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (UImanage.instance.Pcombat == true && dañado == false)
+        if (UImanage.instance.PTurn.value == 1)
         {
             if (UImanage.instance.A_button != 0)
             {
@@ -50,6 +50,16 @@ public class Enemy : MonoBehaviour {
                 break;
             case 2:
                 VidaAc -= 20;
+                if (Counter.instance.Score < 10)
+                {
+                    UImanage.instance.A_button = 0;
+                }
+                else
+                {
+                    Counter.instance.Score -= 10;
+                    Debug.Log("menosmoneda");
+                }
+
                 break;
             case 3:
                 VidaAc -= 30;

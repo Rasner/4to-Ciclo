@@ -19,6 +19,7 @@ public class UImanage : MonoBehaviour {
        
         instance = this;
         PTurn.value = 0;
+        ETurn.value = 0;
         Pcombat = false;
         Ecombat = false;
         S_button = false;
@@ -32,50 +33,30 @@ public class UImanage : MonoBehaviour {
         //EnemyTurn();
 	}
 
-    IEnumerator OnPlayerTurnEnd()
+    void OnPlayerTurnEnd()
     {
-        if (Pcasting == false && Pcombat == false)
+        if (Pcasting == false)
         {
             Pcombat = true;
-            yield return new WaitForSeconds(0.1f);
             Debug.Log("combatefalso");
-            A_button = 0;
+            //A_button = 0;
             Pcombat = false;
         }
-
-        if (A_button == 2 && Pcombat == true)
-        {
-            GameObject magia = GameObject.Find("Text");
-            Counter Libros = magia.GetComponent<Counter>();
-            yield return new WaitForSeconds(0.1f);
-            Libros.Score -= 1;
-        }
-        
-       
-            
-        
-
     }
 
     void OnEnemyTurnEnd()
     {
-        if (Ecasting == false && Ecombat == false)
+        if (Ecasting == false)
         {
             Ecombat = true;
             Debug.Log("combatefalso");
-            A_button = 0;
+            //A_button = 0;
             Ecombat = false;
         }
     }
 
     public void Turn()
     {
-        if(A_button == 2 && Pcombat == true)
-        {
-            GameObject magia = GameObject.Find("Counter Text");
-            Counter Libros = magia.GetComponent<Counter>();
-            Libros.Score -= 10;
-        }
         if (PTurn.value < 1)
         {
             PTurn.value += 0.0060f;
@@ -85,7 +66,7 @@ public class UImanage : MonoBehaviour {
         else if (PTurn.value == 1)
         {
             PTurn.value = 0;
-            StartCoroutine(OnPlayerTurnEnd());
+            OnPlayerTurnEnd();
         }
 
         if (ETurn.value < 1)
@@ -98,10 +79,5 @@ public class UImanage : MonoBehaviour {
             OnEnemyTurnEnd();
             ETurn.value = 0;
         }
-    }
-
-    public void EnemyTurn()
-    {
-        
     }
 }

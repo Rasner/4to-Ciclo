@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerState : MonoBehaviour {
 
     public float HP;
-    public float Score;
+    public int Score;
     void Start()
     {
        HP = GlobalControl.Instance.CurrentHealth = HP;
